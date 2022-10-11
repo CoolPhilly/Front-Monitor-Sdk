@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../dist/index.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+           
+        const { createApp } = Vue
+        const app = createApp({
+                data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+                },
+
+                created() {
+                    let a = null;
+                    if(a.length > 1) {
+                        // ...
+                    }
+                }
+
+            })
+            
+        new Tracker({
+            // userbehavior: true, //用户行为上报
+            // isImmediate:true,
+            baseError:true,
+            requestUrl: "http://localhost:3000/tracker", //接口地址
+            extra:{
+                vue:app,
+            }
+
+            }
+        )
+
+
+    </script>
+    
+</head>
+<body>
+    <div id="app">{{ message }}</div>
+    <img src="/a.jpg" alt="">
+    <button onclick="a">asd</button>
+    <script>
+        app.mount('#app')
+        function test() {
+            return Promise.reject(Error('promise'))
+        }
+        
+        test()
+
+       
+        throw Error('test')
+        let a =() => {
+            console.log(b);
+        }
+         
+   
+    </script>
+
+
+    
+</body>
+</html>

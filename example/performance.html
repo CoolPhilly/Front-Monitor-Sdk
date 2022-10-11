@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../dist/index.js"></script>
+    <!-- <script src="https://unpkg.com/vue@3"></script> -->
+    <script> 
+        new Tracker({
+            // userbehavior: true, //用户行为上报
+            // isImmediate:true,
+            // baseError:true,
+            performance: true,
+            requestUrl: "http://localhost:3000/tracker", //接口地址
+
+            }
+        )
+    </script>
+    
+</head>
+<body>
+    
+    <div id="asd"></div>
+    <img src="https://img0.baidu.com/it/u=2577158883,4050160371&fm=253&fmt=auto&app=138&f=JPEG?w=638&h=383" alt="">
+    <img src="https://img1.baidu.com/it/u=11573730,3792203994&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=675" alt="">
+    
+    <script>
+        // pageLoad
+        setTimeout(() => {
+            document.getElementById("asd").innerHTML = `
+                <div>
+                    testtest
+                </div>
+                <p>good good</p>
+            `
+        }, 3000)
+
+        // xhr
+        var request = new XMLHttpRequest();
+            request.open('post', '/address/dosomething');
+            var params = {
+                name: '张三',
+                age: 18
+            };
+            // 发json类型
+            request.setRequestHeader("Content-Type","application/json;charset=UTF-8");  //用POST的时候一定要有,缺少这句，后台无法获取参数
+            request.send(JSON.stringify(params));
+            
+            request.onreadystatechange = function (){
+                if(request.readyState === 4 && request.status === 200){
+                    alert(xhr.responseText)
+                }
+            }
+
+
+        // fetch
+        fetch('https://api.github.com/users/ruanyf')
+        .then(response => console.log( response.json()))
+
+
+        
+
+    </script>
+    
+</body>
+</html>

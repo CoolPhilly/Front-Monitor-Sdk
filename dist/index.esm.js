@@ -1,5 +1,6 @@
 const config = {
     sdkVersion: '',
+    appid: '',
     uuid: '',
     requestUrl: '',
     isImmediate: false,
@@ -26,7 +27,7 @@ function defaultReport(params, url) {
     url = !!url ? url : config.requestUrl;
     if (!url)
         console.log('请设置上传 url 地址');
-    params = Object.assign(params, { uuid: config.uuid, sdkversion: config.sdkVersion }, { reportTime: new Date().getTime() });
+    params = Object.assign(params, { appid: config.appid, uuid: config.uuid, sdkversion: config.sdkVersion }, { reportTime: new Date().getTime() });
     console.log(params);
     if (compatibility.canUseSendBeacon && params) {
         let headers = {

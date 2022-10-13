@@ -8,6 +8,7 @@
  * @extra 用户自定义字段(对象)
  */
  export interface DefaultOptons {
+    appid:string;
     uuid: string | undefined;
     requestUrl: string | undefined;
     isImmediate: boolean;
@@ -20,6 +21,7 @@
 
 // Partial代表将属性变为可选属性
 export interface Options extends Partial<DefaultOptons> {
+    appid: string;
     requestUrl: string; // 使该属性变为必选属性
 }
 

@@ -1,6 +1,7 @@
 
 const config:any = {
     sdkVersion:'',
+    appid:'',
     uuid: '',
     requestUrl: '',
     isImmediate: false,

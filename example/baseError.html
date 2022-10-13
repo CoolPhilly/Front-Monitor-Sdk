@@ -28,10 +28,12 @@
             })
             
         new Tracker({
-            // userbehavior: true, //用户行为上报
+            appid:'asd',
+            userbehavior: true, //用户行为上报
             // isImmediate:true,
             baseError:true,
-            requestUrl: "http://localhost:3000/tracker", //接口地址
+            // performance:true,
+            requestUrl: "http://localhost:3001/tracker", //接口地址
             extra:{
                 vue:app,
             }

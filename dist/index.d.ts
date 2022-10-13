@@ -3,15 +3,12 @@
  * @isImmediate 是否及时上报
  * @sdkVersion sdk版本
  * @userbehavior 用户行为上报
- * @domTracker DOM元素上报 携带 Tracker-key 点击事件上报
- * @jsError js 和 promise 报错异常上报
- * @requestTracker 网络请求异常上报
- * @screenTracker 白屏上报
- * @resourceError 静态资源加载异常上报
- * @performanceIndex 页面性能指标上报
+ * @baseError 错误监控
+ * @performance 性能监控
  * @extra 用户自定义字段(对象)
  */
 interface DefaultOptons {
+    appid: string;
     uuid: string | undefined;
     requestUrl: string | undefined;
     isImmediate: boolean;
@@ -22,6 +19,7 @@ interface DefaultOptons {
     extra: Record<string, any> | undefined;
 }
 interface Options extends Partial<DefaultOptons> {
+    appid: string;
     requestUrl: string;
 }
 

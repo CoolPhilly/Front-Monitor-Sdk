@@ -1,6 +1,7 @@
 import type { DefaultOptons, Options } from "../type/index";
 import { setConfig } from "./config";
 import { TrackerConfig } from "../type/index";
+import getuuid from "../utils/getUUid";
 import userBehavior from "../lib/userBehavior/index";
 import baseError from "../lib/error/index"
 import performance from "../lib/performance/index";
@@ -19,6 +20,7 @@ export default class Tracker {
     private initDef(): DefaultOptons {
         return <DefaultOptons>{
             sdkVersion: TrackerConfig.version,
+            uuid: getuuid()
         };
     }
 

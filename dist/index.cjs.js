@@ -21,6 +21,14 @@ var TrackerConfig;
     TrackerConfig["version"] = "1.0.0";
 })(TrackerConfig || (TrackerConfig = {}));
 
+function uuid() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const txt = 'test';
+    ctx === null || ctx === void 0 ? void 0 : ctx.fillText(txt, 10, 10);
+    return canvas.toDataURL();
+}
+
 // 兼容性判断
 const compatibility = {
     canUseSendBeacon: !!navigator.sendBeacon,
@@ -462,6 +470,7 @@ class Tracker {
     initDef() {
         return {
             sdkVersion: TrackerConfig.version,
+            uuid: uuid()
         };
     }
     //设置用户id

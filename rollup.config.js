@@ -1,4 +1,6 @@
 import path from "path";
+
+import resolve from "rollup-plugin-node-resolve";
 import ts from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
 export default [
@@ -19,7 +21,7 @@ export default [
                 name: "Tracker",
             },
         ],
-        plugins: [ts()],
+        plugins: [ts(), resolve()],
     },
     {
         input: "./src/core/index.ts",

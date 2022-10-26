@@ -17,6 +17,7 @@ function onEvent(type:string) {
             type: 'performance',
             subType: type,
             startTime: performance.now(),
+            pageURL: location.href,
         })
     }
 

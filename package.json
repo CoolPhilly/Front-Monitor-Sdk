@@ -8,14 +8,18 @@
   },
   "name": "sdk",
   "version": "1.0.0",
-  "main": "rollup.config.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "server": "nodemon ./server/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["前端","埋点", "tracker"],
+  "author": "Philadelphia",
+  "files": ["dist"],
   "license": "ISC",
   "description": "",
   "dependencies": {
